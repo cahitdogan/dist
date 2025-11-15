@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <script>
+        const theme = localStorage.getItem("theme") || "dark";
+        const root = document.documentElement;
+        root.classList.add(theme);
+    </script>
+    <main style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; text-align: center; padding: 2rem;">
+        <h1 style="font-size: 10rem; font-weight: 700; color: var(--text-color-primary); margin: 0;">404</h1>
+        <h2 style="font-size: 3rem; color: var(--text-color-secondary); margin: 2rem 0;">Page Not Found</h2>
+        <p style="font-size: 1.8rem; color: var(--text-color-secondary); max-width: 600px; margin-bottom: 3rem;">
+            The page you're looking for doesn't exist or has been moved.
+        </p>
+        <a href="/" style="font-size: 1.8rem; color: var(--text-color-primary); text-decoration: none; padding: 1.5rem 3rem; border: 2px solid var(--text-color-primary); border-radius: 0.5rem; transition: all 0.3s ease;">
+            Go Back Home
+        </a>
+    </main>
+</body>
+</html>

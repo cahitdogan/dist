@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--META TAG START-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="CAHİT DOĞAN">
+    <meta name="description" content="Personal blog with articles on various topics">
+
+    <!--PRELOAD-->
+    <link rel="preload" href="/image/search-black.svg" as="image">
+    <link rel="preload" href="/image/submit.svg" as="image">
+    <link rel="preload" href="/image/email-black.svg" as="image">
+    <link rel="preload" href="/image/email.svg" as="image">
+    <link rel="preload" href="/image/dark-mode.svg" as="image">
+    <link rel="preload" href="/image/light-mode.svg" as="image">
+
+
+    <!--SCRIPT TAG START-->
+    <script src="/js/light-theme-toggle.js"></script>
+
+
+    <!--CSS-->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <link rel="stylesheet" href="/css/homepage.css">
+    
+
+
+    <!--GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+
+    <!--TITLE START-->
+    <title>Home - CAHİT DOĞAN</title>
+
+</head>
+
+<body>
+    <!--*THEME-->
+    <script>
+        const theme = localStorage.getItem("theme") || "dark";
+        const root = document.documentElement;  //root element
+        root.classList.add(theme);
+    </script>
+
+    <!--*HEADER START-->
+    <header id="header">
+        <div class="container">
+            <button id="search-button" class="search-button icon-button" onclick="openerWithClickBlocker('search-bar-container')" aria-label="search in site"></button>
+            <ul>
+                <li><a href="/">HOME</a></li>
+                <li id="flyout-menu-container">
+                    <span href="">CATEGORIES</span>
+                    <ul id="flyout-menu">
+                        
+                        <li><a href="/category/lifestyle">LIFESTYLE</a></li>
+                        
+                        <li><a href="/category/philosophy">PHILOSOPHY</a></li>
+                        
+                        <li><a href="/category/technology">TECHNOLOGY</a></li>
+                        
+                        <li><a href="/category/writing">WRITING</a></li>
+                        
+                    </ul>
+                </li>
+                <li><a href="/about">ABOUT</a></li>
+            </ul>
+            <button id="light-mode-button" class="night-mode icon-button" onclick="pickTheme();" aria-label="switch theme mode"></button>
+            <p id="logo"> <a href="/">CAHİT DOĞAN</a></p>
+            <button class="burger-menu icon-button" onclick="openerWithClickBlocker('mobile-menu')" aria-label="navigation menu"></button>
+        </div>
+    </header>
+
+
+    <!--*MAIN START-->
+    <main>
+        
+        <section id="hero-section">
+            <article>
+                <a href="/article/welcome-to-my-blog">
+                    <picture>
+                        
+                            
+                                <img src="/image/featured/welcome.jpg" alt="Welcome to My Blog">
+                            
+                        
+                    </picture>
+                </a>
+                <div>
+                    <time datetime="2025-11-15 21:27:46">Nov 15, 2025</time>
+                    <h2><a href="/article/welcome-to-my-blog">Welcome to My Blog</a></h2>
+                    
+                    <p>Welcome to my personal blog where I share my thoughts on philosophy, technology, and life.<span>...</span></p>
+                    
+                </div>
+            </article>
+        </section>
+        
+
+        <h3>Latest articles</h3>
+
+        <section id="articles-grid">
+            
+                
+                <!-- Skip featured article on desktop (it's shown in hero section) -->
+                <article class="featured-duplicate">
+                    <a href="/article/welcome-to-my-blog">
+                        
+                        <img src="/image/featured/welcome.jpg" alt="Welcome to My Blog">
+                        
+                    </a>
+                    <h2><a href="/article/welcome-to-my-blog">Welcome to My Blog</a></h2>
+                    
+                    <p>Welcome to my personal blog where I share my thoughts on philosophy, technology, and life....</p>
+                    
+                    <time datetime="2025-11-15 21:27:46">Nov 15, 2025</time>
+                </article>
+                
+            
+        </section>
+
+        
+    </main>
+
+    <!--*FOOTER START-->
+    <footer>
+        <section id="copyright">
+            <p>Copyright ©2025 -  All rights reserved.</p>
+            <h4>developed by Cahit Doğan</h4>
+        </section>
+    </footer>
+
+
+
+    <!--*ADDITIONAL ELEMENTS START-->
+    <form id="search-bar-container" action="">
+        <input type="search" name="" id="search-bar" placeholder="Search in site..." aria-label="text for search in site">
+        <input type="submit" value="" class="icon-button" aria-label="submit">
+    </form>
+
+
+    <div id="mobile-menu">
+        <button id="closer" class="icon-button" onclick="closerWithClickBlocker('mobile-menu')" aria-label="Close"></button>
+
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li id="mobile-categories-container">
+                <button id="categories-button">Categories</button>
+                <ul id="mobile-categories-list">
+                    
+                    <li><a href="/category/lifestyle">Lifestyle</a></li>
+                    
+                    <li><a href="/category/philosophy">Philosophy</a></li>
+                    
+                    <li><a href="/category/technology">Technology</a></li>
+                    
+                    <li><a href="/category/writing">Writing</a></li>
+                    
+                </ul>
+            </li>
+            <li><a href="/about">About</a></li>
+        </ul>
+
+        <button class="text-icon-button" id="mobile-light-mode-button" onclick="pickTheme()" aria-label="Light mode">
+            <img src="/image/light-mode.svg" alt="icon of button">
+            <span>Dark/Light</span>
+        </button>
+
+        <h4>Social Media</h4>
+        <div class="social-media-links" id="mobile-social-media-links">
+            
+            <a href="https://www.facebook.com/" class="icon-button" aria-label="facebook"></a>
+            
+            
+            <a href="https://twitter.com/" class="icon-button" aria-label="twitter"></a>
+            
+            
+            <a href="https://www.instagram.com/" class="icon-button" aria-label="instagram"></a>
+            
+            
+            <a href="https://www.linkedin.com/" class="icon-button" aria-label="linkedin"></a>
+            
+        </div>
+    </div>
+
+    <div id="click-blocker"></div>
+
+    <!--*SCRIPTS START-->
+    <script src="/js/main.js"></script>
+    <script src="/js/sticky-navbar.js"></script>
+    <noscript>Sorry, your browser does not support JavaScript.</noscript>
+
+</body>
+
+</html>
+

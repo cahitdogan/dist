@@ -1,0 +1,54 @@
+main {
+    height: calc(100vh - 6.7rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    section {
+        border: 0.1px solid #cdcdcd;
+        transform: translateY(-10rem);
+        padding: 2% 5%;
+
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+
+            label {
+                display: flex;
+                flex-direction: column;
+                font-size: 1.6rem;
+
+                input {
+                    width: 30rem;
+                    height: 4rem;
+                    padding-left: 1rem;
+                    font-size: 1.6rem;
+                }
+            }
+
+            button {
+                border: 0.1px solid #cdcdcd;
+                width: 15rem;
+                height: 4rem;
+                display: block;
+                margin: auto;
+                font-size: 1.6rem;
+            }
+
+            p {
+                height: 2.05rem;
+                text-align: center;
+                font-size: 1.6rem;
+            }
+        }
+    }
+
+    
+}

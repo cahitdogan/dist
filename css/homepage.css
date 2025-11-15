@@ -1,0 +1,220 @@
+#hero-section {
+    display: none;
+}
+
+#articles-grid img {
+    object-fit: cover;
+    width: 100%;
+}
+
+/***********************************************/
+
+h3 {
+    display: none;
+    font-size: 2.4rem;
+    font-weight: 400;
+    border-bottom: 1px solid var(--text-color-secondary);
+    color: var(--text-color-primary);
+    margin-bottom: 2rem;
+}
+
+#articles-grid {
+    margin-top: 1.3rem;
+}
+
+/* Direct article styling for SSR */
+#articles-grid>article {
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+#articles-grid>article>a {
+    display: block;
+}
+
+#articles-grid>article>a>img {
+    display: block;
+    aspect-ratio: 70 / 45;
+    border-radius: 0.8rem;
+}
+
+#articles-grid>article>h2>a {
+    font-size: 1.9rem;
+    font-weight: 600;
+    display: block;
+    margin-top: 0.5rem;
+    color: var(--text-color-tertiary);
+}
+
+#articles-grid>article>p {
+    font-size: 1.9rem;
+    color: var(--text-color-secondary);
+}
+
+#articles-grid>article>time {
+    font-size: 1.45rem;
+    color: var(--text-color-primary);
+}
+
+main>nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+main>nav>button {
+    padding: 0.7rem 1.35rem;
+    border: 1px solid var(--text-color-primary);
+    border-radius: 0.6rem;
+    font-size: 1.55rem;
+
+    transition: 0.2s;
+}
+
+main>nav>button:hover {
+    background-color: #cdcdcd;
+    ;
+    color: #151516;
+}
+
+/***********************************************/
+
+@media screen and (width >=650px) {
+
+    #hero-section {
+        display: block;
+        margin-bottom: 6rem;
+        margin-top: 1rem;
+        border: var(--border-hero);
+        border-radius: 1.1rem;
+    }
+
+    #hero-section>article>a {
+        display: block;
+    }
+
+    #hero-section>article>a>picture>img {
+        object-fit: cover;
+        width: 100%;
+        max-height: 40rem;
+        border-radius: 1.1rem 1.1rem 0 0;
+    }
+
+    #hero-section div {
+        background-color: var(--bg-color-secondary);
+        display: flex;
+        flex-direction: column;
+        gap: 1.4rem;
+        border-radius: 0 0 1.1rem 1.1rem;
+
+        padding: 2rem;
+    }
+
+    #hero-section div>time {
+        font-size: 1.45rem;
+        color: var(--text-color-primary);
+    }
+
+    #hero-section div>h2>a {
+        font-size: 2.30rem;
+        font-weight: 400;
+        display: block;
+    }
+
+    #hero-section div>h2>a:hover {
+        text-decoration: underline;
+        text-decoration-thickness: 0.1rem;
+        text-underline-offset: 1rem;
+    }
+
+    #hero-section div>p {
+        font-size: 1.9rem;
+        font-weight: 400;
+        color: var(--text-color-secondary);
+    }
+
+    /***********************/
+
+    h3 {
+        /*son eklenen yazılar*/
+        display: block;
+        font-size: 2.9rem;
+        font-weight: 400;
+        border-bottom: 1px solid var(--text-color-secondary);
+    }
+
+    /* Grid layout for tablet */
+    #articles-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 3.25rem;
+    }
+}
+
+@media screen and (width >=992px) {
+
+    /* Hide featured article from grid on desktop (it's shown in hero section) */
+    #articles-grid > article.featured-duplicate {
+        display: none;
+    }
+
+    #hero-section {
+        margin-top: 2rem;
+    }
+
+    #hero-section>article {
+        height: 50rem;
+        display: flex;
+    }
+
+    #hero-section>article>a {
+        height: auto;
+        flex-basis: 63%;
+    }
+
+    #hero-section>article>a>picture>img {
+        max-height: unset;
+        height: 100%;
+        border-radius: 1.1rem 0 0 1.1rem;
+    }
+
+    #hero-section>article>div {
+        flex-basis: 37%;
+        justify-content: space-around;
+        gap: 0rem;
+        padding: 5rem;
+        border-radius: 0 1.1rem 1.1rem 0;
+    }
+
+    #hero-section>article>div>h2>a {
+        font-size: 2.9rem;
+    }
+
+    #hero-section div>p {
+        font-size: 1.9rem;
+    }
+
+    /***********************/
+
+    /* Grid layout for desktop */
+    #articles-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 2.5rem;
+    }
+
+    #articles-grid>article>h2>a:hover {
+        text-decoration: underline;
+        text-decoration-thickness: 0.1rem;
+    }
+
+    #articles-grid>article>p {
+        font-size: 1.9rem;
+    }
+
+    /***********************/
+}

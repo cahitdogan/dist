@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--META TAG START-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="CAHİT DOĞAN">
+    <meta name="description" content="Front-end Developer">
+
+    <!--PRELOAD-->
+    <link rel="preload" href="/image/search-black.svg" as="image">
+    <link rel="preload" href="/image/submit.svg" as="image">
+    <link rel="preload" href="/image/email-black.svg" as="image">
+    <link rel="preload" href="/image/email.svg" as="image">
+    <link rel="preload" href="/image/dark-mode.svg" as="image">
+    <link rel="preload" href="/image/light-mode.svg" as="image">
+
+
+    <!--SCRIPT TAG START-->
+    <script src="/js/light-theme-toggle.js"></script>
+
+
+    <!--CSS-->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <link rel="stylesheet" href="/css/about.css">
+    
+
+
+    <!--GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+
+    <!--TITLE START-->
+    <title>About - CAHİT DOĞAN</title>
+
+</head>
+
+<body>
+    <!--*THEME-->
+    <script>
+        const theme = localStorage.getItem("theme") || "dark";
+        const root = document.documentElement;  //root element
+        root.classList.add(theme);
+    </script>
+
+    <!--*HEADER START-->
+    <header id="header">
+        <div class="container">
+            <button id="search-button" class="search-button icon-button" onclick="openerWithClickBlocker('search-bar-container')" aria-label="search in site"></button>
+            <ul>
+                <li><a href="/">HOME</a></li>
+                <li id="flyout-menu-container">
+                    <span href="">CATEGORIES</span>
+                    <ul id="flyout-menu">
+                        
+                        <li><a href="/category/lifestyle">LIFESTYLE</a></li>
+                        
+                        <li><a href="/category/philosophy">PHILOSOPHY</a></li>
+                        
+                        <li><a href="/category/technology">TECHNOLOGY</a></li>
+                        
+                        <li><a href="/category/writing">WRITING</a></li>
+                        
+                    </ul>
+                </li>
+                <li><a href="/about">ABOUT</a></li>
+            </ul>
+            <button id="light-mode-button" class="night-mode icon-button" onclick="pickTheme();" aria-label="switch theme mode"></button>
+            <p id="logo"> <a href="/">CAHİT DOĞAN</a></p>
+            <button class="burger-menu icon-button" onclick="openerWithClickBlocker('mobile-menu')" aria-label="navigation menu"></button>
+        </div>
+    </header>
+
+
+    <!--*MAIN START-->
+    <main>
+        <div class="profile-header">
+            
+            <img id="author-pfp" src="/image/photos/batman.jpg" alt="CAHİT DOĞAN" width="175" height="175" draggable="false">
+            
+            <h2>CAHİT DOĞAN</h2>
+            <div id="job">Front-end Developer</div>
+        </div>
+
+        <h3>Social Media Links</h3>
+        <div id="social-media-link-buttons">
+            
+            <a target="_blank" href="https://www.instagram.com/">Instagram</a>
+            
+            
+            <a target="_blank" href="https://twitter.com/">Twitter</a>
+            
+            
+            <a target="_blank" href="https://www.linkedin.com/">LinkedIn</a>
+            
+            
+            <a target="_blank" href="https://www.facebook.com/">Facebook</a>
+            
+            
+            <a target="_blank" href="https://github.com/cahitdogan">GitHub</a>
+            
+        </div>
+
+        <section id="about-me-container">
+            <h3>About me</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum quae similique assumenda fugiat, nam praesentium quod architecto laborum quia! Alias, dignissimos debitis. Itaque soluta consectetur temporibus obcaecati doloribus iure reiciendis.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur veritatis, ducimus illo et libero fugiat totam beatae omnis! Quibusdam, sit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit saepe illum magni cumque quam ut et mollitia natus laborum a sed quia beatae quidem libero architecto, necessitatibus accusamus temporibus voluptate.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum sapiente reprehenderit pariatur quod, rerum molestiae officia neque aliquam aliquid, quam ad aspernatur, voluptatum temporibus quia!</p>
+        </section>
+    </main>
+
+    <!--*FOOTER START-->
+    <footer>
+        <section id="copyright">
+            <p>Copyright ©2025 -  All rights reserved.</p>
+            <h4>developed by Cahit Doğan</h4>
+        </section>
+    </footer>
+
+
+
+    <!--*ADDITIONAL ELEMENTS START-->
+    <form id="search-bar-container" action="">
+        <input type="search" name="" id="search-bar" placeholder="Search in site..." aria-label="text for search in site">
+        <input type="submit" value="" class="icon-button" aria-label="submit">
+    </form>
+
+
+    <div id="mobile-menu">
+        <button id="closer" class="icon-button" onclick="closerWithClickBlocker('mobile-menu')" aria-label="Close"></button>
+
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li id="mobile-categories-container">
+                <button id="categories-button">Categories</button>
+                <ul id="mobile-categories-list">
+                    
+                    <li><a href="/category/lifestyle">Lifestyle</a></li>
+                    
+                    <li><a href="/category/philosophy">Philosophy</a></li>
+                    
+                    <li><a href="/category/technology">Technology</a></li>
+                    
+                    <li><a href="/category/writing">Writing</a></li>
+                    
+                </ul>
+            </li>
+            <li><a href="/about">About</a></li>
+        </ul>
+
+        <button class="text-icon-button" id="mobile-light-mode-button" onclick="pickTheme()" aria-label="Light mode">
+            <img src="/image/light-mode.svg" alt="icon of button">
+            <span>Dark/Light</span>
+        </button>
+
+        <h4>Social Media</h4>
+        <div class="social-media-links" id="mobile-social-media-links">
+            
+            <a href="https://www.facebook.com/" class="icon-button" aria-label="facebook"></a>
+            
+            
+            <a href="https://twitter.com/" class="icon-button" aria-label="twitter"></a>
+            
+            
+            <a href="https://www.instagram.com/" class="icon-button" aria-label="instagram"></a>
+            
+            
+            <a href="https://www.linkedin.com/" class="icon-button" aria-label="linkedin"></a>
+            
+        </div>
+    </div>
+
+    <div id="click-blocker"></div>
+
+    <!--*SCRIPTS START-->
+    <script src="/js/main.js"></script>
+    <script src="/js/sticky-navbar.js"></script>
+    <noscript>Sorry, your browser does not support JavaScript.</noscript>
+
+</body>
+
+</html>
+

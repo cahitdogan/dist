@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="katman_1" data-name="katman 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 362.3 362.3">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 40px;
+      }
+    </style>
+  </defs>
+  <line class="cls-1" x1="20" y1="20" x2="342.3" y2="342.3"/>
+  <line class="cls-1" x1="342.3" y1="20" x2="20" y2="342.3"/>
+</svg>

@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: #151516;
+    color: #cdcdcd;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+
+    div {
+        @media (width < 992px) {
+            display: none;
+        }
+
+        a {
+            @media (width > 992px) {
+                font-size: 1.5rem;
+                display: unset;
+            }
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            padding: 1rem;
+            font-size: 1.6rem;
+            border: 1px solid #cdcdcd;
+            border-radius: 1rem;
+            margin-left: 1rem;
+        }
+
+        button:hover {
+            background-color: #27272b;
+        }
+    }
+
+    > button {
+        @media (width > 992px) {
+            display: none;
+        }
+    }
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #cdcdcd;
+}
+
+a {
+    text-decoration: none;
+    color: #cdcdcd;
+}
+
+li {
+    list-style: none;
+}
+
+#drawer-root {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    visibility: hidden;
+
+    #drawer-backdrop {
+        background-color: #151516;
+        opacity: 0.5;
+        width: 100%;
+        height: 100%;
+    }
+
+    #drawer {
+        background-color: #1a1a1d;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 70%;
+        max-width: 32rem;
+        height: 100vh;
+        transform: translateX(100%);
+        transition: transform 0.25s;
+    
+        #top-container {
+            height: 7rem;
+            border-bottom: 0.1px solid #27272b;
+    
+            button {
+                display: block;
+                margin: 1rem 1rem 0 auto;
+            }
+        }
+    
+        #navigation-container {
+            a {
+                display: block;
+                font-size: 2.25rem;
+                border-bottom: 0.1px solid #27272b;
+                padding: 0.7rem 0 0.7rem 2.5rem;
+            }
+        }
+    }
+}
+
+.sidebar-actions {
+    margin-top: auto;
+    padding: 1rem;
+    border-top: 1px solid #27272b;
+}
+
+.sidebar-button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.6rem;
+    border: none;
+    background-color: transparent;
+    color: #cdcdcd;
+    cursor: pointer;
+    text-align: left;
+}
+
+.sidebar-button:hover {
+    background-color: #27272b;
+}
+
+.sidebar-button i {
+    margin-right: 1rem;
+}

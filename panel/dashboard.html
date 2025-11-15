@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dashboard</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Cahit Doğan">
+    <meta name="description" content="Dashboard">
+
+    <link rel="stylesheet" href="css/panel.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/c20cb8ddc9.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <main>
+        <aside>
+            <div class="sidebar-user">
+                <div class="user-avatar">
+                    <i class="fa-solid fa-user-circle"></i>
+                </div>
+                <div class="user-info">
+                    <h3 id="user-name">Admin User</h3>
+                    <p id="user-email">admin@blog.com</p>
+                </div>
+            </div>
+
+            <h2>Navigation</h2>
+            <ul>
+                <li style="font-size: 1.6rem; padding: 1rem; border-bottom: 0.1px solid #cdcdcd;">
+                    <i class="fa-solid fa-chart-line"></i>
+                    Dashboard
+                </li>
+                <li><a href="articles.html">
+                    <i class="fa-solid fa-newspaper"></i>
+                    <span>Articles</span>
+                </a></li>
+                <li><a href="new-article.html">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    <span>Add New Article</span>
+                </a></li>
+                <li><a href="categories.html">
+                    <i class="fa-solid fa-folder-tree"></i>
+                    <span>Categories</span>
+                </a></li>
+                <li><a href="about-page.html">
+                    <i class="fa-solid fa-user"></i>
+                    <span>About Page</span>
+                </a></li>
+            </ul>
+            <div class="sidebar-actions">
+                <a href="/" class="sidebar-button">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Back to Home</span>
+                </a>
+                <button type="button" id="logout-button" class="sidebar-button">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+        <section id="articles-datas">
+            <h2>Dashboard Overview</h2>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-file-lines"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Total Articles</h3>
+                        <p id="total-articles">0</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon" style="background-color: #28a745;">
+                        <i class="fa-solid fa-check-circle"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Published</h3>
+                        <p id="published-articles">0</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon" style="background-color: #ffc107;">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Drafts</h3>
+                        <p id="draft-articles">0</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon" style="background-color: #17a2b8;">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Total Views</h3>
+                        <p id="total-views">0</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quick-actions">
+                <h3>Quick Actions</h3>
+                <div class="action-buttons">
+                    <a href="new-article.html" class="action-btn">
+                        <i class="fa-solid fa-plus"></i>
+                        <span>Create New Article</span>
+                    </a>
+                    <a href="articles.html" class="action-btn">
+                        <i class="fa-solid fa-list"></i>
+                        <span>Manage Articles</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section id="drawer-root">
+        <div id="drawer-backdrop"></div>
+        <div id="drawer">
+            <div id="top-container">
+                <button type="button"><i class="fa-solid fa-xmark" style="color: #cdcdcd; font-size: 3rem;"></i></button>
+            </div>
+            <ul id="navigation-container">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="new-article.html">Add New Article</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="../index.html">Home</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <script src="js/api.js"></script>
+    <script src="js/isLoggedIn.js"></script>
+    <script type="module" src="js/panel.js"></script>
+    <script src="js/sidebar-user.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/logout.js"></script>
+    <script src="js/connection-monitor.js"></script>
+</body>
+</html>

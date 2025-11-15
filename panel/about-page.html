@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>About Page - Admin Panel</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Cahit Doğan">
+    <meta name="description" content="Edit About Page">
+
+    <link rel="stylesheet" href="css/panel.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/articles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/c20cb8ddc9.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <main>
+        <aside>
+            <div class="sidebar-user">
+                <div class="user-avatar">
+                    <i class="fa-solid fa-user-circle"></i>
+                </div>
+                <div class="user-info">
+                    <h3 id="user-name">Admin User</h3>
+                    <p id="user-email">admin@blog.com</p>
+                </div>
+            </div>
+
+            <h2>Navigation</h2>
+            <ul>
+                <li><a href="dashboard.html">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Dashboard</span>
+                </a></li>
+                <li><a href="articles.html">
+                    <i class="fa-solid fa-newspaper"></i>
+                    <span>Articles</span>
+                </a></li>
+                <li><a href="categories.html">
+                    <i class="fa-solid fa-folder-tree"></i>
+                    <span>Categories</span>
+                </a></li>
+                <li style="font-size: 1.6rem; padding: 1rem; border-bottom: 0.1px solid #cdcdcd;">
+                    <i class="fa-solid fa-user"></i>
+                    About Page
+                </li>
+            </ul>
+            <div class="sidebar-actions">
+                <a href="/" class="sidebar-button">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Back to Home</span>
+                </a>
+                <button type="button" id="logout-button" class="sidebar-button">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+        <section id="content-section">
+            <h2>Edit About Page</h2>
+
+            <div id="loading-message" class="loading">Loading about page data...</div>
+            <div id="error-message" class="error" style="display: none;"></div>
+            <div id="success-message" class="success" style="display: none;"></div>
+
+            <form id="about-form" style="display: none;">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                    <small>Your full name as displayed on the about page</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="job_title">Job Title *</label>
+                    <input type="text" id="job_title" name="job_title" required>
+                    <small>Your current job title or profession</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="profile_image">Profile Image</label>
+                    <input type="file" id="profile_image" name="profile_image" accept="image/jpeg,image/jpg,image/png,image/gif,image/webp">
+                    <small>Upload a profile photo (JPEG, PNG, GIF, WebP - Max 5MB)</small>
+                    <div id="image-preview" style="display: none; margin-top: 1rem;">
+                        <img id="preview-img" src="" alt="Preview" style="max-width: 200px; max-height: 200px; border-radius: 50%; border: 3px solid #4CAF50;">
+                        <button type="button" id="remove-image" class="btn btn-danger btn-small" style="display: block; margin-top: 0.5rem;">
+                            <i class="fa-solid fa-xmark"></i> Remove Image
+                        </button>
+                    </div>
+                    <input type="hidden" id="profile_image_url" name="profile_image_url">
+                </div>
+
+                <div class="form-group">
+                    <label for="bio">Biography *</label>
+                    <textarea id="bio" name="bio" rows="10" required></textarea>
+                    <small>Write about yourself. HTML is supported.</small>
+                </div>
+
+                <h3 style="color: #e0e0e0; font-size: 1.8rem; margin: 3rem 0 2rem 0; border-bottom: 1px solid #3a3a3e; padding-bottom: 1rem;">Social Media Links</h3>
+
+                <div class="form-group">
+                    <label for="instagram_url">Instagram URL</label>
+                    <input type="url" id="instagram_url" name="instagram_url" placeholder="https://www.instagram.com/username">
+                    <small>Your Instagram profile link (optional)</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="twitter_url">Twitter URL</label>
+                    <input type="url" id="twitter_url" name="twitter_url" placeholder="https://twitter.com/username">
+                    <small>Your Twitter profile link (optional)</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="linkedin_url">LinkedIn URL</label>
+                    <input type="url" id="linkedin_url" name="linkedin_url" placeholder="https://www.linkedin.com/in/username">
+                    <small>Your LinkedIn profile link (optional)</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="facebook_url">Facebook URL</label>
+                    <input type="url" id="facebook_url" name="facebook_url" placeholder="https://www.facebook.com/username">
+                    <small>Your Facebook profile link (optional)</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="github_url">GitHub URL</label>
+                    <input type="url" id="github_url" name="github_url" placeholder="https://github.com/username">
+                    <small>Your GitHub profile link (optional)</small>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fa-solid fa-save"></i> Save Changes
+                    </button>
+                    <a href="dashboard.html" class="btn btn-secondary">
+                        <i class="fa-solid fa-xmark"></i> Cancel
+                    </a>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <section id="drawer-root">
+        <div id="drawer-backdrop"></div>
+        <div id="drawer">
+            <div id="top-container">
+                <button type="button"><i class="fa-solid fa-xmark" style="color: #cdcdcd; font-size: 3rem;"></i></button>
+            </div>
+            <ul id="navigation-container">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="new-article.html">Add New Article</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="about-page.html">About Page</a></li>
+                <li><a href="../index.html">Home</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <script src="js/api.js"></script>
+    <script src="js/isLoggedIn.js"></script>
+    <script type="module" src="js/panel.js"></script>
+    <script src="js/sidebar-user.js"></script>
+    <script src="js/about-page.js"></script>
+    <script src="js/logout.js"></script>
+    <script src="js/connection-monitor.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+#articles-grid > article img{
+    object-fit: cover;
+}
+
+/***********************************************/
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    letter-spacing: 0.7rem;
+    border-bottom: 1px solid var(--text-color-secondary);
+    color: var(--text-color-primary);
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+#articles-grid {
+    margin-top: 1.3rem;
+}
+
+#articles-grid > article {
+    margin-bottom: 5rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#articles-grid > article > a > img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 70 / 45;
+    border-radius: 0.8rem;
+}
+
+#articles-grid > article > h3 > a {
+    font-size: 4rem;
+    font-weight: 100;
+    display: block;
+}
+
+#articles-grid > article > p {
+    font-size: 1.9rem;
+    color: var(--text-color-secondary);
+}
+
+#articles-grid > article > time {
+    font-size: 1.45rem;
+    font-weight: 300;
+    color: var(--text-color-tertiary);
+}
+
+/***********************************************/
+
+@media screen and (width >= 650px) {
+
+    #articles-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    #articles-grid > article {
+        flex-basis: calc(100% / 2 - 2rem);
+    }
+}
+
+@media screen and (width >= 992px) {
+    h2 {
+        font-size: 2.7rem;
+        text-align: center;
+    }
+
+    #articles-grid > article {
+        flex-basis: calc(100% / 3 - 2rem);
+    }
+
+    #articles-grid > article > h3 > a {
+        font-size: 2.25rem;
+    }
+
+    #articles-grid > article > h3 > a:hover {
+        text-decoration: underline;
+        text-decoration-thickness: 0.1rem;
+    }
+
+    #articles-grid > article > p {
+        font-size: 1.75rem;
+    }
+
+}

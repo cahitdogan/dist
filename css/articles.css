@@ -1,0 +1,207 @@
+main > article {
+    max-width: 70rem;
+    margin: 6rem auto;
+}
+
+main * {
+    color: var(--text-color-primary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-color-tertiary);
+}
+
+main > article > h1 {
+    font-size: 2.7rem;
+    margin: 2.5rem 0 0.5rem 0;
+}
+
+main > article > h2 {
+    font-size: 2.3rem;
+    margin: 2rem 0;
+}
+
+main > article > h3 {
+    font-size: 2.1rem;
+    margin: 1.5rem 0;
+}
+
+main > article > h4 {
+    font-size: 1.9rem;
+    margin: 1rem 0;
+}
+
+main > article > h5 {
+    font-size: 1.7rem;
+    margin: 1rem 0;
+}
+
+main > article > h6 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+#article-info-block {
+    font-size: 1.4rem;
+    margin-bottom: 5rem;
+    color: var(--text-color-secondary);
+}
+
+#article-info-block > *:not(:first-child) {
+    margin: 0 1rem;
+}
+
+#article-info-block > time {
+    margin-right: 1rem;
+}
+
+#article-info-block a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#article-info-block a:hover {
+    text-decoration: underline;
+}
+
+main > article > p {
+    font-size: 1.85rem;
+    line-height: 2.5rem;
+    margin-bottom: 5rem;
+    color: var(--text-color-primary);
+    font-weight: 500;
+}
+
+main > article > p > b{
+    font-weight: 600;
+}
+
+main > article a {
+    color: rgb(36, 76, 187);
+    text-decoration: underline;
+}
+
+blockquote {
+    background-color: var(--bg-color-blockquote);
+    border-radius: 1rem;
+    font-size: 2rem;
+    margin: 5rem 0;
+    padding: 1.7rem 2.3rem;
+    line-height: 2.9rem;
+    color: var(--text-color-primary);
+}
+
+blockquote::before {
+    content: '“ ';
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 2.9rem;
+}
+
+blockquote::after {
+    content: ' ”';
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 2.9rem;
+}
+
+main > article ul {
+    list-style-type: disc;
+    font-size: 2rem;
+    margin: 3rem 0;
+    list-style-position: inside;
+}
+
+main > article ol {
+    list-style-type: decimal;
+    font-size: 2rem;
+    margin: 3rem 0;
+    list-style-position: inside;
+}
+
+main > article li {
+    margin: 2rem 0;
+    padding-left: 1.5rem;
+    color: var(--text-color-primary);
+    font-weight: 300;
+}
+
+main > article li b {
+    font-weight: 600;
+}
+
+main > article img {
+    display: block;
+    margin: 3rem 0;
+    max-width: 96.5%;
+}
+
+main > article iframe {
+    display: block;
+    margin: 3rem auto;
+    max-width: 100%;
+}
+
+main > article audio, main > article video {
+    display: block;
+    margin: auto;
+}
+
+main > article audio {
+    width: 75%;
+}
+
+main > article hr {
+    display: block;
+    margin: 5rem auto;
+    border-top: 1.5px solid var(--text-color-secondary);
+}
+
+table, th, td {
+    border: 1px solid var(--text-color-secondary);
+    border-collapse: collapse;
+}
+
+table {
+    margin: 3rem auto;
+}
+
+th, td {
+    padding: 1rem;
+    font-size: 1.8rem;
+}
+
+main > article figure {
+    margin: 4rem 0;
+}
+
+main > article figcaption {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+@media screen and (width >= 650px) {
+
+    main > article img {
+        max-width: 100%;
+    }
+
+    blockquote {
+        padding: 2rem 3rem;
+    }
+
+    main > article ul, main > article ol {
+        list-style-position: outside;
+    }
+
+    main > article li {
+        margin: 1.25rem 0;
+        padding-left: unset;
+    }
+
+    main > article > p {
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 2.9rem;
+}
+}

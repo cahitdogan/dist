@@ -1,0 +1,21 @@
+main > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2rem auto 4rem auto;
+    max-width: 60rem;
+}
+
+main > ul > li > a {
+    display: block;
+    padding: 1rem;
+    border: 1px solid var(--text-color-primary);
+    text-align: center;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    letter-spacing: 0.3rem;
+}
+
+main > ul > li > a:hover {
+    background-color: var(--bg-color-hover-categories);
+}

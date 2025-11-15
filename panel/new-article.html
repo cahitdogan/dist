@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>New Article - Admin Panel</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Cahit Doğan">
+    <meta name="description" content="Create New Article">
+
+    <link rel="stylesheet" href="css/panel.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/articles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/c20cb8ddc9.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <main>
+        <aside>
+            <div class="sidebar-user">
+                <div class="user-avatar">
+                    <i class="fa-solid fa-user-circle"></i>
+                </div>
+                <div class="user-info">
+                    <h3 id="user-name">Admin User</h3>
+                    <p id="user-email">admin@blog.com</p>
+                </div>
+            </div>
+
+            <h2>Navigation</h2>
+            <ul>
+                <li><a href="dashboard.html">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Dashboard</span>
+                </a></li>
+                <li><a href="articles.html">
+                    <i class="fa-solid fa-newspaper"></i>
+                    <span>Articles</span>
+                </a></li>
+                <li style="font-size: 1.6rem; padding: 1rem; border-bottom: 0.1px solid #cdcdcd;">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    Add New Article
+                </li>
+                <li><a href="categories.html">
+                    <i class="fa-solid fa-folder-tree"></i>
+                    <span>Categories</span>
+                </a></li>
+                <li><a href="about-page.html">
+                    <i class="fa-solid fa-user"></i>
+                    <span>About Page</span>
+                </a></li>
+            </ul>
+            <div class="sidebar-actions">
+                <a href="/" class="sidebar-button">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Back to Home</span>
+                </a>
+                <button type="button" id="logout-button" class="sidebar-button">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+        <section id="content-section">
+            <h2>Create New Article</h2>
+
+            <div id="error-message" class="error" style="display: none;"></div>
+            <div id="success-message" class="success" style="display: none;"></div>
+
+            <form id="article-form">
+                <div class="form-group">
+                    <label for="title">Title *</label>
+                    <input type="text" id="title" name="title" required>
+                    <small>Enter a compelling title for your article</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="slug">Slug *</label>
+                    <input type="text" id="slug" name="slug" required>
+                    <small>URL-friendly version of the title (auto-generated from title)</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="excerpt">Excerpt</label>
+                    <textarea id="excerpt" name="excerpt" rows="3"></textarea>
+                    <small>A short summary of the article (optional but recommended)</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="content">Content *</label>
+                    <textarea id="content" name="content" required></textarea>
+                    <small>Write your article content here. HTML is supported. <span id="word-count" style="color: #4CAF50; font-weight: 600;">0 words</span></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="category_id">Category</label>
+                    <select id="category_id" name="category_id">
+                        <option value="">Select a category</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="featured_image">Featured Image</label>
+                    <input type="file" id="featured_image" name="featured_image" accept="image/jpeg,image/jpg,image/png,image/gif,image/webp">
+                    <small>Upload an image (JPEG, PNG, GIF, WebP - Max 5MB)</small>
+                    <div id="image-preview" style="display: none; margin-top: 1rem;">
+                        <img id="preview-img" src="" alt="Preview" style="max-width: 300px; max-height: 200px; border-radius: 0.4rem; border: 2px solid #4CAF50;">
+                        <button type="button" id="remove-image" class="btn btn-danger btn-small" style="display: block; margin-top: 0.5rem;">
+                            <i class="fa-solid fa-xmark"></i> Remove Image
+                        </button>
+                    </div>
+                    <input type="hidden" id="featured_image_url" name="featured_image_url">
+                </div>
+
+                <div class="form-group">
+                    <label for="read_time">Read Time (minutes)</label>
+                    <input type="number" id="read_time" name="read_time" min="1" value="1">
+                    <small>Auto-calculated based on content (238 words/min). You can override manually.</small>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" name="status" value="draft" class="btn btn-secondary">
+                        <i class="fa-solid fa-floppy-disk"></i> Save as Draft
+                    </button>
+                    <button type="submit" name="status" value="published" class="btn btn-primary">
+                        <i class="fa-solid fa-check"></i> Publish
+                    </button>
+                    <a href="articles.html" class="btn btn-secondary">
+                        <i class="fa-solid fa-xmark"></i> Cancel
+                    </a>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <section id="drawer-root">
+        <div id="drawer-backdrop"></div>
+        <div id="drawer">
+            <div id="top-container">
+                <button type="button"><i class="fa-solid fa-xmark" style="color: #cdcdcd; font-size: 3rem;"></i></button>
+            </div>
+            <ul id="navigation-container">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="new-article.html">Add New Article</a></li>
+                <li><a href="../index.html">Home</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <script src="js/api.js"></script>
+    <script src="js/isLoggedIn.js"></script>
+    <script type="module" src="js/panel.js"></script>
+    <script src="js/sidebar-user.js"></script>
+    <script src="js/text-editor.js"></script>
+    <script src="js/auto-save.js"></script>
+    <script src="js/new-article.js"></script>
+    <script src="js/logout.js"></script>
+    <script src="js/connection-monitor.js"></script>
+</body>
+</html>
